@@ -21,14 +21,17 @@ Notice that the vowel o is counted twice.
 */
 
 function halvesAreAlike(s: string): boolean {
-    const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+  const vowels = new Set(["a", "e", "i", "o", "u"]);
 
-    const countVowels = (str: string): number =>
-        str.toLowerCase().split('').filter(char => vowels.has(char)).length;
+  const countVowels = (str: string): number =>
+    str
+      .toLowerCase()
+      .split("")
+      .filter((char) => vowels.has(char)).length;
 
-    const halfLength = s.length / 2;
-    const firstHalf = s.substring(0, halfLength);
-    const secondHalf = s.substring(halfLength);
+  const halfLength = s.length / 2;
+  const firstHalf = s.substring(0, halfLength);
+  const secondHalf = s.substring(halfLength);
 
-    return countVowels(firstHalf) === countVowels(secondHalf);
-};
+  return countVowels(firstHalf) === countVowels(secondHalf);
+}
